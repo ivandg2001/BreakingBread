@@ -11,13 +11,26 @@ import java.util.Date;
 @Entity
 public class Lotto {
 
-
+    /**
+     * ID usato per identificare singolarmente i lotti nel database
+     */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int ID;
 
+    /**
+     * Data di scadenza del lotto
+     */
     private Date data_scadenza;
+    /**
+     * quantità di sostanza attualmente presente nel lotto
+     */
     private double quantita;
+
+    /**
+     * Costruttore vuoto
+     */
+    public Lotto() {}
 
     public Date getData_scadenza() {return data_scadenza;}
 
