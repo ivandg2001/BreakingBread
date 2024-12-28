@@ -2,7 +2,7 @@ package PackageResponsabile;
 
 import jakarta.persistence.*;
 
-import java.time.LocalDate;
+// todo: Aggiungere le foreign keys
 
 /**
  *
@@ -11,6 +11,8 @@ import java.time.LocalDate;
  */
 @Entity
 public class Responsabile {
+
+
 
     /**
      * Id dell'oggetto responsabile, chiave primaria della tabella, proprieta' di autoincrement.
