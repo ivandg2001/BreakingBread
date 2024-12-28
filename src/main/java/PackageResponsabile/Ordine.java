@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 
 import java.time.LocalDate;
 
+//todo: aggiungere le foreign keys
+
 /**
  *
  * Classe Entity che rappresenta un ordine nel Database.
@@ -12,6 +14,7 @@ import java.time.LocalDate;
 
 @Entity
 public class Ordine {
+
 
 
     /**
