@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 
 import java.time.LocalDate;
 
-//todo: aggiungere le foreign keys
+//todo: aggiungere la foreign key di Lotto
 
 /**
  *
@@ -14,8 +14,6 @@ import java.time.LocalDate;
 
 @Entity
 public class Ordine {
-
-
 
     /**
      *  Id dell'oggetto ordine, chiave primaria della tabella, proprieta' di autoincrement.
@@ -36,6 +34,13 @@ public class Ordine {
      */
 
     private double costo;
+
+    /**
+     * Responsabile che ha effettuato l'ordine
+     */
+    @ManyToOne
+    @JoinColumn(name = "Responsabile_ID", referencedColumnName = "ID")
+    private Responsabile responsabile;
 
     /**
      * Costruttore predefinito, serve a JPA.
@@ -97,5 +102,19 @@ public class Ordine {
         this.costo = costo;
     }
 
+    /**
+     * Setta il responsabile associato a questo ordine.
+     * @param responsabile responsabile associato a questo ordine.
+     */
+    public void setResponsabile(Responsabile responsabile) {
+        this.responsabile = responsabile;
+    }
 
+    /**
+     * Ritorna il responsabile che ha effettuato questo ordine
+     * @return Reponsabile dell'ordine
+     */
+    public Responsabile getResponsabile() {
+        return this.responsabile;
+    }
 }
