@@ -21,9 +21,9 @@ public class Homepage {
         panel.add(welcomeLabel, BorderLayout.CENTER);
 
         // Pulsante per continuare
-        JButton continueButton = new JButton("Continua");
-        continueButton.setFont(new Font("Arial", Font.PLAIN, 14));
-        continueButton.addActionListener(new ActionListener() {
+        JButton responsabileButton = new JButton("Responsabile");
+        responsabileButton.setFont(new Font("Arial", Font.PLAIN, 14));
+        responsabileButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 // Azione da eseguire quando si clicca "Continua"
@@ -31,27 +31,31 @@ public class Homepage {
                 frame.dispose(); // Chiude la pagina iniziale
 
                 // Puoi aprire una nuova finestra qui, se necessario
-                openMainApplication();
+
             }
         });
-        panel.add(continueButton, BorderLayout.SOUTH);
+
+        JButton ricercatoreButton = new JButton("Ricercatore");
+        ricercatoreButton.setFont(new Font("Arial", Font.PLAIN, 14));
+        ricercatoreButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // Azione da eseguire quando si clicca "Continua"
+                JOptionPane.showMessageDialog(frame, "Hai cliccato Continua!");
+                frame.dispose(); // Chiude la pagina iniziale
+
+                // Puoi aprire una nuova finestra qui, se necessario
+
+            }
+        });
+
+        panel.add(responsabileButton, BorderLayout.SOUTH);
 
         // Aggiunta del pannello al frame
         frame.add(panel);
         frame.setVisible(true);
     }
 
-    // Metodo per aprire la finestra principale dell'applicazione
-    private static void openMainApplication() {
-        JFrame mainFrame = new JFrame("Applicazione Principale");
-        mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        mainFrame.setSize(600, 400);
-        mainFrame.setLocationRelativeTo(null);
 
-        JLabel mainLabel = new JLabel("Questa è la schermata principale.", JLabel.CENTER);
-        mainFrame.add(mainLabel);
-
-        mainFrame.setVisible(true);
-    }
 }
 
