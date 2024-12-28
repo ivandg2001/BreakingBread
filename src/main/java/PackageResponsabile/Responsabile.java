@@ -2,6 +2,9 @@ package PackageResponsabile;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
+import java.util.Collection;
+
 // todo: Aggiungere le foreign keys
 
 /**
@@ -11,8 +14,6 @@ import jakarta.persistence.*;
  */
 @Entity
 public class Responsabile {
-
-
 
     /**
      * Id dell'oggetto responsabile, chiave primaria della tabella, proprieta' di autoincrement.
@@ -34,6 +35,12 @@ public class Responsabile {
      * Username utilizzato dal responsabile per loggarsi.
      */
     private String username;
+
+    /**
+     * Lista degli ordini effettuati dal responsabile
+     */
+    @OneToMany(mappedBy = "responsabile")
+    private ArrayList<Ordine> ordini;
 
     /**
      * Costruttore predefinito, serve a JPA
@@ -111,5 +118,22 @@ public class Responsabile {
     public void setUsername(String username) {
         this.username = username;
     }
+
+    /**
+     * Ritorna la lista degli ordini effettuati dal responsabile
+     * @return lista di ordini
+     */
+    public Collection<Ordine> getOrdini() {
+        return ordini;
+    }
+
+    /**
+     * Setta la lista degli ordini del responsabile
+     * @param ordini lista di ordini
+     */
+    public void setOrdini(ArrayList<Ordine> ordini) {
+        this.ordini = ordini;
+    }
+
 
 }
