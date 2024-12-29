@@ -1,11 +1,12 @@
 package PackageArmadietto;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
+@Entity
 public class Sostanza {
 
     /**
@@ -25,7 +26,14 @@ public class Sostanza {
     /**
      * Costo della sostanza per ogni unità della stessa
      */
-    private double costo_unitario;
+    private double costoUnitario;
+
+    /**
+     *
+     * Lista dei lotti in cui è contenuta tale sostanza
+     */
+    @OneToMany(mappedBy = "sostanza", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Lotto> lotto;
 
     /**
      * Costruttore vuoto
@@ -74,16 +82,16 @@ public class Sostanza {
      *
      * @return costo della sostanza per unità
      */
-    public double getCosto_unitario() {
-        return costo_unitario;
+    public double getCostoUnitario() {
+        return costoUnitario;
     }
 
     /**
      * Imposta il costo della sostanza per unitò
      *
-     * @param costo_unitario costo della sostanza per unità
+     * @param costoUnitario costo della sostanza per unità
      */
-    public void setCosto_unitario(double costo_unitario) {
-        this.costo_unitario = costo_unitario;
+    public void setCosto_unitario(double costoUnitario) {
+        this.costoUnitario = costoUnitario;
     }
 }

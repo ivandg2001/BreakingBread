@@ -1,10 +1,10 @@
 package PackageResponsabile;
 
+import PackageArmadietto.Lotto;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
 
-//todo: aggiungere la foreign key di Lotto
 
 /**
  *
@@ -42,6 +42,10 @@ public class Ordine {
     @JoinColumn(name = "Responsabile_ID", referencedColumnName = "ID")
     private Responsabile responsabile;
 
+    @OneToOne
+    @JoinColumn(name = "Lotto_ID", referencedColumnName = "ID", nullable = false)
+    private Lotto lotto;
+
     /**
      * Costruttore predefinito, serve a JPA.
      */
@@ -54,10 +58,12 @@ public class Ordine {
      *
      * @param dataOrdine data in cui è stato effettuato l'ordine.
      * @param costo      costo totale dell'ordine.
+     * @param responsabile responsaile che ha effettuto l'ordine
      */
-    public Ordine(LocalDate dataOrdine, double costo) {
+    public Ordine(LocalDate dataOrdine, double costo , Responsabile responsabile) {
         this.dataOrdine = dataOrdine;
         this.costo = costo;
+        this.responsabile = responsabile;
     }
 
     //--Getters and Setters--

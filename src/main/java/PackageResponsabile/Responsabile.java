@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 // todo: Aggiungere le foreign keys
 
@@ -40,7 +41,7 @@ public class Responsabile {
      * Lista degli ordini effettuati dal responsabile
      */
     @OneToMany(mappedBy = "responsabile")
-    private ArrayList<Ordine> ordini;
+    private List<Ordine> ordini;
 
     /**
      * Costruttore predefinito, serve a JPA
@@ -123,7 +124,7 @@ public class Responsabile {
      * Ritorna la lista degli ordini effettuati dal responsabile
      * @return lista di ordini
      */
-    public Collection<Ordine> getOrdini() {
+    public List<Ordine> getOrdini() {
         return ordini;
     }
 
@@ -131,7 +132,7 @@ public class Responsabile {
      * Setta la lista degli ordini del responsabile
      * @param ordini lista di ordini
      */
-    public void setOrdini(ArrayList<Ordine> ordini) {
+    public void setOrdini(List<Ordine> ordini) {
         this.ordini = ordini;
     }
 
