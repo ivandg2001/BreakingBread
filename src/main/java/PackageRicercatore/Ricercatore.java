@@ -4,6 +4,10 @@ import jakarta.persistence.*;
 
 import java.util.List;
 
+/**
+ * Classe Entity che rappresenta un ricercatore nel Database.
+ */
+
 @Entity
 public class Ricercatore {
 
