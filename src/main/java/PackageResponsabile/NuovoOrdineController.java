@@ -22,16 +22,21 @@ public class NuovoOrdineController {
 
 
         // creazione dell'oggetto ordine
-        Lotto lotto = new Lotto(temp);
+        //Lotto lotto = new Lotto(temp);
         LocalDate today = LocalDate.now();
-        Ordine ordine = new Ordine(today, 12.3, responsabile, lotto);
+        //Ordine ordine = new Ordine(today, 12.3, responsabile, lotto);
 
         // crea schermata di riepilogo
         String nomeSostanza = armadiettoFacade.getNomeSostanza();
         String formulaChimica = armadiettoFacade.getFormulaChimicaSostanza();
         Double purezza = armadiettoFacade.getPurezzaSostanza();
+        int priorita = 8;
+        // Stampa schermata di riepilogo
 
         // Inserimento dell'ordine nel sistema
         //DAO
+
+        // Torna schermata Home
+        // Stampa popup di Conferma
     }
 }

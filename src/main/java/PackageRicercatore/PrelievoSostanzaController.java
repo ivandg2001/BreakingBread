@@ -11,8 +11,8 @@ public class PrelievoSostanzaController {
     public static void prelevaSostanza(Ricercatore ricercatore) {
 
         // acquisire lista di team e porgetti
-        ArrayList<Team> teams = Team.getTeams();
-        ArrayList<Progetto> progetti = Progetto.getProgetti();
+        //ArrayList<Team> teams = Team.getTeams();
+        //ArrayList<Progetto> progetti = Progetto.getProgetti();
 
         // creazione dell'interfaccia grafica dell'utente
 
