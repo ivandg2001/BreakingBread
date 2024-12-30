@@ -12,7 +12,7 @@ import java.util.ArrayList;
  */
 
 
-public class Lotto implements StorageComponent{
+public class Lotto {
 
     /**
      * ID usato per identificare singolarmente i lotti
