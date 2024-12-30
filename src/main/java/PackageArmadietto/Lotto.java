@@ -28,19 +28,10 @@ public class Lotto {
     private double quantita;
 
     /**
-     * Ordine che contiene questo lotto
-     */
-    private Ordine ordine;
-
-    /**
      * Sostanza contenuta nel lotto, si fa riferimento all'ID
      */
     private Sostanza sostanza;
 
-    /**
-     * Lista dei prelievi effettuati su questo lotto
-     */
-    private ArrayList<Prelievo> prelievi;
 
     /**
      * Costruttore predefinito
@@ -55,18 +46,17 @@ public class Lotto {
      * @param quantita quantità rimanente della sostanza nel lotto
      * @param sostanza ID della sostanza contenuta nel lotto
      */
-    public Lotto(LocalDate dataScadenza , double quantita , Sostanza sostanza, Ordine ordine){
+    public Lotto(LocalDate dataScadenza , double quantita , Sostanza sostanza){
         this.dataScadenza = dataScadenza;
         this.sostanza = sostanza;
         this.quantita = quantita;
-        this.ordine = ordine;
     }
 
     /**
      * Restituisce l'id del lotto
      * @return ID del lotto
      */
-    public int getID() {
+    public Integer getID() {
         return this.ID;
     }
 
@@ -116,34 +106,10 @@ public class Lotto {
     }
 
     /**
-     * Ritorna l'ordine in cui viene comprato questo lotto
-     * @return Oggetto ordine
+     * Setta id del lotto
+     * @param ID id lotto
      */
-    public Ordine getOrdine() {
-        return this.ordine;
-    }
-
-    /**
-     * Setta l'ordine in cui si è comprato questo lotto
-     * @param ordine Oggetto ordine
-     */
-    public void setOrdine(Ordine ordine) {
-        this.ordine = ordine;
-    }
-
-    /**
-     * Ritorna la lista dei prelievi effettuati su questo lotto
-     * @return Lista di oggetti prelievo
-     */
-    public ArrayList<Prelievo> getPrelievi() {
-        return this.prelievi;
-    }
-
-    /**
-     * Setta la lista dei prelievi effettuati su questo lotto
-     * @param prelievi Lista di prelievi
-     */
-    public void setPrelievi(ArrayList<Prelievo> prelievi) {
-        this.prelievi = prelievi;
+    public void setID(int ID) {
+        this.ID = ID;
     }
 }

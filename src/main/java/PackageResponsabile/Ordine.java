@@ -121,4 +121,11 @@ public class Ordine {
         return this.responsabile;
     }
 
+    /**
+     * Setta id dell'ordine
+     * @param ID id ordine
+     */
+    public void setID(int ID) {
+        this.ID = ID;
+    }
 }

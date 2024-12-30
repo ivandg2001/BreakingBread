@@ -11,20 +11,20 @@ public class Armadietto {
     /**
      * Lista dei lotti presenti nel laboratorio
      */
-    private ArrayList<LottoJPA> lotti;
+    private ArrayList<Lotto> lotti;
 
     /**
      * Costruttore predefinito
      */
     public Armadietto(){
-        this.lotti = new ArrayList<LottoJPA>();
+        this.lotti = new ArrayList<Lotto>();
     }
 
     /**
      * Costruttore parametrico che inizializza il campo
      * @param lotti lotti del laboratorio
      */
-    public Armadietto(ArrayList<LottoJPA> lotti){
+    public Armadietto(ArrayList<Lotto> lotti){
         this.lotti = lotti;
     }
 
@@ -32,7 +32,7 @@ public class Armadietto {
      * Ritorna la lista dei lotti
      * @return lista lotti
      */
-    public List<LottoJPA> getLotti() {
+    public List<Lotto> getLotti() {
         return lotti;
     }
 
@@ -40,7 +40,7 @@ public class Armadietto {
      * Setta la lista dei lotti
      * @param lotti lista lotti
      */
-    public void setLotti(ArrayList<LottoJPA> lotti) {
+    public void setLotti(ArrayList<Lotto> lotti) {
         this.lotti = lotti;
     }
 
@@ -48,7 +48,7 @@ public class Armadietto {
      * Metodo che permette di aggiungere un lotto alla lista dei lotti
      * @param lotto
      */
-    public void addLotto(LottoJPA lotto){
+    public void addLotto(Lotto lotto){
         this.lotti.add(lotto);
     }
 }

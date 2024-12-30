@@ -42,7 +42,7 @@ public class OrdineJPA {
     @JoinColumn(name = "responsabile_id", referencedColumnName = "id")
     private ResponsabileJPA responsabile;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "lotto_id", referencedColumnName = "id", nullable = false)
     private LottoJPA lotto;
 

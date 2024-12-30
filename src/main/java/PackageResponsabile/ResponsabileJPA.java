@@ -36,12 +36,6 @@ public class ResponsabileJPA {
     private String username;
 
     /**
-     * Lista degli ordini effettuati dal responsabile
-     */
-    @OneToMany(mappedBy = "responsabile")
-    private ArrayList<OrdineJPA> ordini;
-
-    /**
      * Costruttore predefinito, serve a JPA
      */
     public ResponsabileJPA() {
@@ -118,21 +112,6 @@ public class ResponsabileJPA {
         this.username = username;
     }
 
-    /**
-     * Ritorna la lista degli ordini effettuati dal responsabile
-     * @return lista di ordini
-     */
-    public List<OrdineJPA> getOrdini() {
-        return ordini;
-    }
-
-    /**
-     * Setta la lista degli ordini del responsabile
-     * @param ordini lista di ordini
-     */
-    public void setOrdini(ArrayList<OrdineJPA> ordini) {
-        this.ordini = ordini;
-    }
 
 
 }

@@ -24,18 +24,25 @@ public class Sostanza {
      */
     private double costoUnitario;
 
-    /**
-     *
-     * Lista dei lotti in cui è contenuta tale sostanza
-     */
-    private List<Lotto> lotto;
 
     /**
      * Costruttore vuoto
      */
     public Sostanza() {}
 
-
+    /**
+     * Costruttore parametrico che inizializza i campi
+     * @param ID id sostanza
+     * @param nome nome sostanza
+     * @param formula formula della sostanza
+     * @param costoUnitario costo unitario della sostanza
+     */
+    public Sostanza(int ID, String nome, String formula, double costoUnitario) {
+        this.ID = ID;
+        this.nome = nome;
+        this.formula = formula;
+        this.costoUnitario = costoUnitario;
+    }
     /**
      * Restituisce il nome della sostanza
      *
@@ -91,18 +98,18 @@ public class Sostanza {
     }
 
     /**
-     * Ritorna i lotti in cui e'presente tale sostanza
-     * @return lista di lotti
+     * Setta ID della sostanza
+     * @param ID id sostanza
      */
-    public List<Lotto> getLotto() {
-        return this.lotto;
+    public void setID(int ID) {
+        this.ID = ID;
     }
 
     /**
-     * Setta i lotti in cui si trova la sostanza
-     * @param lotto lista di lotti
+     * Ritorna l'id della sostanza
+     * @return id sostanza
      */
-    public void setLotto(List<Lotto> lotto) {
-        this.lotto = lotto;
+    public Integer getID() {
+        return ID;
     }
 }

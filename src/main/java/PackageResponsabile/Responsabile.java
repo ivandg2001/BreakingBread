@@ -28,10 +28,6 @@ public class Responsabile {
      */
     private String username;
 
-    /**
-     * Lista degli ordini effettuati dal responsabile
-     */
-    private ArrayList<Ordine> ordini;
 
     /**
      * Costruttore predefinito, serve a JPA
@@ -118,23 +114,6 @@ public class Responsabile {
         this.username = username;
     }
 
-    /**
-     * Ritorna la lista degli ordini effettuati dal responsabile
-     *
-     * @return lista di ordini
-     */
-    public ArrayList<Ordine> getOrdini() {
-        return ordini;
-    }
-
-    /**
-     * Setta la lista degli ordini del responsabile
-     *
-     * @param ordini lista di ordini
-     */
-    public void setOrdini(ArrayList<Ordine> ordini) {
-        this.ordini = ordini;
-    }
 
 }
 

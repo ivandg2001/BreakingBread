@@ -27,17 +27,21 @@ public class SostanzaJPA {
     private double costoUnitario;
 
     /**
-     *
-     * Lista dei lotti in cui è contenuta tale sostanza
-     */
-    @OneToMany(mappedBy = "sostanza", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<LottoJPA> lotto;
-
-    /**
      * Costruttore vuoto
      */
     public SostanzaJPA() {}
 
+    /**
+     * Costruttore parametrico per inizializzare i campi
+     * @param nome nome della sostanza
+     * @param formula formula della sostanza
+     * @param costoUnitario costo unitario della sostanza
+     */
+    public SostanzaJPA(String nome, String formula, double costoUnitario) {
+        this.nome = nome;
+        this.formula = formula;
+        this.costoUnitario = costoUnitario;
+    }
 
     /**
      * Restituisce il nome della sostanza
@@ -91,5 +95,21 @@ public class SostanzaJPA {
      */
     public void setCostoUnitario(double costoUnitario) {
         this.costoUnitario = costoUnitario;
+    }
+
+    /**
+     * Ritorna l'id della sostanza
+     * @return id sostanza
+     */
+    public int getID() {
+        return this.ID;
+    }
+
+    /**
+     * Setta l'id della sostanza
+     * @param ID id sostanza
+     */
+    public void setID(int ID) {
+        this.ID = ID;
     }
 }
