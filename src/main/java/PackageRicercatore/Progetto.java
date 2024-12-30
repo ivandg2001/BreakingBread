@@ -25,7 +25,7 @@ public class Progetto {
      * Team a cui è stato assegnato il progetto.
      */
     @ManyToOne
-    @JoinColumn(name = "team_id" , referencedColumnName = "ID")
+    @JoinColumn(name = "team_id" , referencedColumnName = "id")
     private Team team;
 
     /**

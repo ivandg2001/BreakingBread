@@ -41,7 +41,7 @@ public class Ricercatore {
      * Team a cui appartiene il ricercatore
      */
     @ManyToOne
-    @JoinColumn(name = "team_id", referencedColumnName = "ID")
+    @JoinColumn(name = "team_id", referencedColumnName = "id")
     private Team team;
 
     /**

@@ -39,11 +39,11 @@ public class Ordine {
      * Responsabile che ha effettuato l'ordine
      */
     @ManyToOne
-    @JoinColumn(name = "Responsabile_ID", referencedColumnName = "ID")
+    @JoinColumn(name = "responsabile_id", referencedColumnName = "id")
     private Responsabile responsabile;
 
     @OneToOne
-    @JoinColumn(name = "Lotto_ID", referencedColumnName = "ID", nullable = false)
+    @JoinColumn(name = "lotto_id", referencedColumnName = "id", nullable = false)
     private Lotto lotto;
 
     /**

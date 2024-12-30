@@ -41,7 +41,7 @@ public class Prelievo {
      * ricercatore che ha effettuato l'ordine
      */
     @ManyToOne
-    @JoinColumn(name = "ricercatore_id" , referencedColumnName = "ID")
+    @JoinColumn(name = "ricercatore_id" , referencedColumnName = "id")
     private Ricercatore ricercatore;
 
     /**

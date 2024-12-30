@@ -40,7 +40,7 @@ public class Lotto {
      * Sostanza contenuta nel lotto, si fa riferimento all'ID
      */
     @ManyToOne
-    @JoinColumn(name = "Sostanza_ID", referencedColumnName = "ID")
+    @JoinColumn(name = "sostanza_id", referencedColumnName = "id")
     private Sostanza sostanza;
 
     /**
