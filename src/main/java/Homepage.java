@@ -1,13 +1,11 @@
 import javax.swing.*;
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class  Homepage {
+
+    static JFrame frame;
+
     public static void main(String[] args) {
-        ApplicationFrame applicationFrame = new ApplicationFrame();
+        frame = new JFrame();
+
     }
-
-
 }
-

@@ -1,9 +1,6 @@
 package PackageRicercatore;
 
-import java.util.ArrayList;
-import java.util.List;
-
-public class PrelievoSostanzaController {
+public class PrelievoSostanzaControl {
 
     /**
      * Implementazione della funzionalità di prelievo di una sostanza
