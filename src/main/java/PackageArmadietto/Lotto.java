@@ -1,7 +1,7 @@
 package PackageArmadietto;
 
-import PackageResponsabile.OrdineJPA;
-import PackageRicercatore.PrelievoJPA;
+import PackageResponsabile.Ordine;
+import PackageRicercatore.Prelievo;
 
 
 import java.time.LocalDate;
@@ -12,7 +12,7 @@ import java.util.ArrayList;
  */
 
 
-public class Lotto {
+public class Lotto implements StorageComponent{
 
     /**
      * ID usato per identificare singolarmente i lotti
@@ -30,17 +30,17 @@ public class Lotto {
     /**
      * Ordine che contiene questo lotto
      */
-    private OrdineJPA ordine;
+    private Ordine ordine;
 
     /**
      * Sostanza contenuta nel lotto, si fa riferimento all'ID
      */
-    private SostanzaJPA sostanza;
+    private Sostanza sostanza;
 
     /**
      * Lista dei prelievi effettuati su questo lotto
      */
-    private ArrayList<PrelievoJPA> prelievi;
+    private ArrayList<Prelievo> prelievi;
 
     /**
      * Costruttore predefinito
@@ -55,7 +55,7 @@ public class Lotto {
      * @param quantita quantità rimanente della sostanza nel lotto
      * @param sostanza ID della sostanza contenuta nel lotto
      */
-    public Lotto(LocalDate dataScadenza , double quantita , SostanzaJPA sostanza, OrdineJPA ordine){
+    public Lotto(LocalDate dataScadenza , double quantita , Sostanza sostanza, Ordine ordine){
         this.dataScadenza = dataScadenza;
         this.sostanza = sostanza;
         this.quantita = quantita;
@@ -103,7 +103,7 @@ public class Lotto {
      * Ritorna la sostanza contenuta ne lotto
      * @return oggetto sostanza
      */
-    public SostanzaJPA getSostanza() {
+    public Sostanza getSostanza() {
         return this.sostanza;
     }
 
@@ -111,7 +111,7 @@ public class Lotto {
      * Setta la sostanza contenuta nel lotto
      * @param sostanza oggetto sostanza
      */
-    public void setSostanza(SostanzaJPA sostanza) {
+    public void setSostanza(Sostanza sostanza) {
         this.sostanza = sostanza;
     }
 
@@ -119,7 +119,7 @@ public class Lotto {
      * Ritorna l'ordine in cui viene comprato questo lotto
      * @return Oggetto ordine
      */
-    public OrdineJPA getOrdine() {
+    public Ordine getOrdine() {
         return this.ordine;
     }
 
@@ -127,7 +127,7 @@ public class Lotto {
      * Setta l'ordine in cui si è comprato questo lotto
      * @param ordine Oggetto ordine
      */
-    public void setOrdine(OrdineJPA ordine) {
+    public void setOrdine(Ordine ordine) {
         this.ordine = ordine;
     }
 
@@ -135,7 +135,7 @@ public class Lotto {
      * Ritorna la lista dei prelievi effettuati su questo lotto
      * @return Lista di oggetti prelievo
      */
-    public ArrayList<PrelievoJPA> getPrelievi() {
+    public ArrayList<Prelievo> getPrelievi() {
         return this.prelievi;
     }
 
@@ -143,7 +143,7 @@ public class Lotto {
      * Setta la lista dei prelievi effettuati su questo lotto
      * @param prelievi Lista di prelievi
      */
-    public void setPrelievi(ArrayList<PrelievoJPA> prelievi) {
+    public void setPrelievi(ArrayList<Prelievo> prelievi) {
         this.prelievi = prelievi;
     }
 }

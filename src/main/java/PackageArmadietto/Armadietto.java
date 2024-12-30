@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Classe Entity che rappresenta l'armadietto.
  */
-public class Armadietto {
+public class Armadietto implements StorageComponent{
 
     /**
      * Lista dei lotti presenti nel laboratorio
