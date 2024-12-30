@@ -12,7 +12,7 @@ import java.util.List;
  *
  */
 @Entity
-public class Responsabile {
+public class ResponsabileJPA {
 
     /**
      * Id dell'oggetto responsabile, chiave primaria della tabella, proprieta' di autoincrement.
@@ -39,12 +39,12 @@ public class Responsabile {
      * Lista degli ordini effettuati dal responsabile
      */
     @OneToMany(mappedBy = "responsabile")
-    private ArrayList<Ordine> ordini;
+    private ArrayList<OrdineJPA> ordini;
 
     /**
      * Costruttore predefinito, serve a JPA
      */
-    public Responsabile() {
+    public ResponsabileJPA() {
 
     }
 
@@ -54,7 +54,7 @@ public class Responsabile {
      * @param password password del responsabile
      * @param username username del responsabile
      */
-    public Responsabile(String nome, String password, String username) {
+    public ResponsabileJPA(String nome, String password, String username) {
         this.nome = nome;
         this.password = password;
         this.username = username;
@@ -122,7 +122,7 @@ public class Responsabile {
      * Ritorna la lista degli ordini effettuati dal responsabile
      * @return lista di ordini
      */
-    public List<Ordine> getOrdini() {
+    public List<OrdineJPA> getOrdini() {
         return ordini;
     }
 
@@ -130,7 +130,7 @@ public class Responsabile {
      * Setta la lista degli ordini del responsabile
      * @param ordini lista di ordini
      */
-    public void setOrdini(ArrayList<Ordine> ordini) {
+    public void setOrdini(ArrayList<OrdineJPA> ordini) {
         this.ordini = ordini;
     }
 

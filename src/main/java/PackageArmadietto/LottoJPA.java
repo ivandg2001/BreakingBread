@@ -2,21 +2,24 @@ package PackageArmadietto;
 
 import PackageResponsabile.OrdineJPA;
 import PackageRicercatore.PrelievoJPA;
+import jakarta.persistence.*;
 
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 
 /**
- * Classe POJO che rappresenta un lotto nel sistema, mappato da un adapter JPA.
+ * Classe Entity che rappresenta un lotto presente nel Database.
  */
 
-
-public class Lotto {
+@Entity
+public class LottoJPA {
 
     /**
-     * ID usato per identificare singolarmente i lotti
+     * ID usato per identificare singolarmente i lotti nel database
      */
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int ID;
     /**
      * Data di scadenza del lotto
@@ -30,22 +33,26 @@ public class Lotto {
     /**
      * Ordine che contiene questo lotto
      */
+    @OneToOne(mappedBy = "lotto") // La proprietà "lotto" nella classe Ordine gestisce la relazione
     private OrdineJPA ordine;
 
     /**
      * Sostanza contenuta nel lotto, si fa riferimento all'ID
      */
+    @ManyToOne
+    @JoinColumn(name = "sostanza_id", referencedColumnName = "id")
     private SostanzaJPA sostanza;
 
     /**
      * Lista dei prelievi effettuati su questo lotto
      */
+    @OneToMany(mappedBy = "lotto")
     private ArrayList<PrelievoJPA> prelievi;
 
     /**
      * Costruttore predefinito
      */
-    public Lotto() {
+    public LottoJPA() {
 
     }
 
@@ -55,7 +62,7 @@ public class Lotto {
      * @param quantita quantità rimanente della sostanza nel lotto
      * @param sostanza ID della sostanza contenuta nel lotto
      */
-    public Lotto(LocalDate dataScadenza , double quantita , SostanzaJPA sostanza, OrdineJPA ordine){
+    public LottoJPA(LocalDate dataScadenza , double quantita , SostanzaJPA sostanza, OrdineJPA ordine){
         this.dataScadenza = dataScadenza;
         this.sostanza = sostanza;
         this.quantita = quantita;

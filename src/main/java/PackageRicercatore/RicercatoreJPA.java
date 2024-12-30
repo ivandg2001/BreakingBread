@@ -10,7 +10,7 @@ import java.util.List;
  */
 
 @Entity
-public class Ricercatore {
+public class RicercatoreJPA {
 
     /**
      * ID del ricercatore
@@ -36,19 +36,19 @@ public class Ricercatore {
      * Lista dei prelievi effettuati dal ricercatore
      */
     @OneToMany(mappedBy = "ricercatore")
-    private ArrayList<Prelievo> prelievi;
+    private ArrayList<PrelievoJPA> prelievi;
 
     /**
      * Team a cui appartiene il ricercatore
      */
     @ManyToOne
     @JoinColumn(name = "team_id", referencedColumnName = "id")
-    private Team team;
+    private TeamJPA team;
 
     /**
      * Costruttore predefinito
      */
-    public Ricercatore(){}
+    public RicercatoreJPA(){}
 
     /***
      * Costruttore parametrico che inizializza i campi
@@ -58,7 +58,7 @@ public class Ricercatore {
      * @param prelievi preliev effettuati dal ricercatore
      * @param team team a cui appartiene il ricercatore
      */
-    public Ricercatore(String nome , String username , String password , ArrayList<Prelievo> prelievi , Team team){
+    public RicercatoreJPA(String nome , String username , String password , ArrayList<PrelievoJPA> prelievi , TeamJPA team){
         this.nome = nome;
         this.password = password;
         this.username = username;
@@ -78,7 +78,7 @@ public class Ricercatore {
      * Ritorna la lista dei prelievi effettuati dal ricercatore
      * @return lista dei prelievi
      */
-    public List<Prelievo> getPrelievi() {
+    public List<PrelievoJPA> getPrelievi() {
         return this.prelievi;
     }
 
@@ -110,7 +110,7 @@ public class Ricercatore {
      * Ritorna il team a cui appatiene il ricercatore
      * @return team ricercatore
      */
-    public Team getTeam() {
+    public TeamJPA getTeam() {
         return this.team;
     }
 
@@ -118,7 +118,7 @@ public class Ricercatore {
      * Setta i prelievi effettuati dal ricecatore
      * @param prelievi relievi del ricercatore
      */
-    public void setPrelievi(ArrayList<Prelievo> prelievi) {
+    public void setPrelievi(ArrayList<PrelievoJPA> prelievi) {
         this.prelievi = prelievi;
     }
 
@@ -142,7 +142,7 @@ public class Ricercatore {
      * Setta il team a cui fa parte il ricercatore
      * @param team Oggetto team
      */
-    public void setTeam(Team team) {
+    public void setTeam(TeamJPA team) {
         this.team = team;
     }
 

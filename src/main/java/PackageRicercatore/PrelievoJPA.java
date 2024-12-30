@@ -1,6 +1,6 @@
 package PackageRicercatore;
 
-import PackageArmadietto.Lotto;
+import PackageArmadietto.LottoJPA;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
@@ -11,7 +11,7 @@ import java.time.LocalDate;
  */
 
 @Entity
-public class Prelievo {
+public class PrelievoJPA {
 
     /**
      * Id del prelievo di una sostanza
@@ -35,26 +35,26 @@ public class Prelievo {
      */
     @ManyToOne
     @JoinColumn(name = "lotto_id" , referencedColumnName = "ID")
-    private Lotto lotto;
+    private LottoJPA lotto;
 
     /**
      * ricercatore che ha effettuato l'ordine
      */
     @ManyToOne
     @JoinColumn(name = "ricercatore_id" , referencedColumnName = "id")
-    private Ricercatore ricercatore;
+    private RicercatoreJPA ricercatore;
 
     /**
      * Costruttore predefinito
      */
-    public Prelievo(){}
+    public PrelievoJPA(){}
 
     /**
      * Costruttore parametrico per inizializzare i campi
      * @param Date Data in cui è stato effettuato il prelievo
      * @param lotto Lotto su cui è stato effettuato il prelievo
      */
-    public Prelievo(LocalDate Date , Lotto lotto , double quantita){
+    public PrelievoJPA(LocalDate Date , LottoJPA lotto , double quantita){
         this.date = Date;
         this.lotto = lotto;
         this.quantita = quantita;
@@ -72,7 +72,7 @@ public class Prelievo {
      * Ritorna il lotto su cui è stato effettuato il prelievo
      * @return Oggetto lotto
      */
-    public Lotto getLotto() {
+    public LottoJPA getLotto() {
         return this.lotto;
     }
 
@@ -80,7 +80,7 @@ public class Prelievo {
      * Setta il lotto su cui effettuare il prelievo
      * @param lotto Oggetto lotto
      */
-    public void setLotto(Lotto lotto) {
+    public void setLotto(LottoJPA lotto) {
         this.lotto = lotto;
     }
 
@@ -120,7 +120,7 @@ public class Prelievo {
      * Ritorna il ricercatore che ha effettuato il prelievo
      * @return oggetto ricercatore
      */
-    public Ricercatore getRicercatore() {
+    public RicercatoreJPA getRicercatore() {
         return this.ricercatore;
     }
 
@@ -128,7 +128,7 @@ public class Prelievo {
      * Setta il ricercatore che ha effettuato questo prelievo
      * @param ricercatore oggetto ricercatore
      */
-    public void setRicercatore(Ricercatore ricercatore) {
+    public void setRicercatore(RicercatoreJPA ricercatore) {
         this.ricercatore = ricercatore;
     }
 }

@@ -2,12 +2,10 @@ package PackageArmadietto;
 
 import jakarta.persistence.*;
 
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 @Entity
-public class Sostanza {
+public class SostanzaJPA {
 
     /**
      * ID usato per identificare singolarmente le sostanze nel database
@@ -33,12 +31,12 @@ public class Sostanza {
      * Lista dei lotti in cui è contenuta tale sostanza
      */
     @OneToMany(mappedBy = "sostanza", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Lotto> lotto;
+    private List<LottoJPA> lotto;
 
     /**
      * Costruttore vuoto
      */
-    public Sostanza() {}
+    public SostanzaJPA() {}
 
 
     /**

@@ -1,6 +1,6 @@
 package PackageResponsabile;
 
-import PackageArmadietto.Lotto;
+import PackageArmadietto.LottoJPA;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
@@ -13,7 +13,7 @@ import java.time.LocalDate;
  */
 
 @Entity
-public class Ordine {
+public class OrdineJPA {
 
     /**
      *  Id dell'oggetto ordine, chiave primaria della tabella, proprieta' di autoincrement.
@@ -40,16 +40,16 @@ public class Ordine {
      */
     @ManyToOne
     @JoinColumn(name = "responsabile_id", referencedColumnName = "id")
-    private Responsabile responsabile;
+    private ResponsabileJPA responsabile;
 
     @OneToOne
     @JoinColumn(name = "lotto_id", referencedColumnName = "id", nullable = false)
-    private Lotto lotto;
+    private LottoJPA lotto;
 
     /**
      * Costruttore predefinito, serve a JPA.
      */
-    public Ordine() {
+    public OrdineJPA() {
 
     }
 
@@ -61,7 +61,7 @@ public class Ordine {
      * @param responsabile responsaile che ha effettuto l'ordine
      * @param lotto lotto ordinato
      */
-    public Ordine(LocalDate dataOrdine, double costo , Responsabile responsabile, Lotto lotto) {
+    public OrdineJPA(LocalDate dataOrdine, double costo , ResponsabileJPA responsabile, LottoJPA lotto) {
         this.dataOrdine = dataOrdine;
         this.costo = costo;
         this.responsabile = responsabile;
@@ -114,7 +114,7 @@ public class Ordine {
      * Setta il responsabile associato a questo ordine.
      * @param responsabile responsabile associato a questo ordine.
      */
-    public void setResponsabile(Responsabile responsabile) {
+    public void setResponsabile(ResponsabileJPA responsabile) {
         this.responsabile = responsabile;
     }
 
@@ -122,7 +122,7 @@ public class Ordine {
      * Ritorna il responsabile che ha effettuato questo ordine
      * @return Reponsabile dell'ordine
      */
-    public Responsabile getResponsabile() {
+    public ResponsabileJPA getResponsabile() {
         return this.responsabile;
     }
 }

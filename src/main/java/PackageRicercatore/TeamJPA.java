@@ -11,7 +11,7 @@ import java.util.List;
  * Classe Entity che rappresenta un team nel Database.
  */
 @Entity
-public class Team {
+public class TeamJPA {
 
     /**
      * ID del Team
@@ -29,18 +29,18 @@ public class Team {
      * Lista dei ricercatori che fanno parte di questo team
      */
     @OneToMany(mappedBy = "team")
-    private ArrayList<Ricercatore> ricercatori;
+    private ArrayList<RicercatoreJPA> ricercatori;
 
     /**
      * Lista dei progetti assegnati a questo team
      */
     @OneToMany(mappedBy = "team")
-    private ArrayList<Progetto> progetti;
+    private ArrayList<ProgettoJPA> progetti;
 
     /**
      * Costruttore predefinito
      */
-    public Team(){}
+    public TeamJPA(){}
 
     /**
      * Costruttore parametrico che inizializza i campi
@@ -48,7 +48,7 @@ public class Team {
      * @param ricercatori lista di oggetti ricercatore
      * @param progetti lista di oggetti progetto
      */
-    public Team(String nomeTeam , ArrayList<Ricercatore> ricercatori , ArrayList<Progetto> progetti){
+    public TeamJPA(String nomeTeam , ArrayList<RicercatoreJPA> ricercatori , ArrayList<ProgettoJPA> progetti){
         this.nomeTeam = nomeTeam;
         this.progetti = progetti;
         this.ricercatori = ricercatori;
@@ -74,7 +74,7 @@ public class Team {
      * Ritorna la lista dei progetti assegnati al Team
      * @return lista progetti
      */
-    public List<Progetto> getProgetti() {
+    public List<ProgettoJPA> getProgetti() {
         return this.progetti;
     }
 
@@ -82,7 +82,7 @@ public class Team {
      * Ritorna la lista dei ricercatori che appartengono al Team
      * @return lista ricercatori
      */
-    public List<Ricercatore> getRicercatori() {
+    public List<RicercatoreJPA> getRicercatori() {
         return this.ricercatori;
     }
 
@@ -98,7 +98,7 @@ public class Team {
      * Setta la lista dei progetti ssegnati al Team
      * @param progetti lista progetti
      */
-    public void setProgetti(ArrayList<Progetto> progetti) {
+    public void setProgetti(ArrayList<ProgettoJPA> progetti) {
         this.progetti = progetti;
     }
 
@@ -106,7 +106,7 @@ public class Team {
      * Setta la lista dei ricercatori che appartengono al Team
      * @param ricercatori lista ricercatori
      */
-    public void setRicercatori(ArrayList<Ricercatore> ricercatori) {
+    public void setRicercatori(ArrayList<RicercatoreJPA> ricercatori) {
         this.ricercatori = ricercatori;
     }
 }

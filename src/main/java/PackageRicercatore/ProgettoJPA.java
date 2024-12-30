@@ -6,7 +6,7 @@ import jakarta.persistence.*;
  * Classe Entity che rappresenta un progetto nel Database.
  */
 @Entity
-public class Progetto {
+public class ProgettoJPA {
 
 
     /**
@@ -26,19 +26,19 @@ public class Progetto {
      */
     @ManyToOne
     @JoinColumn(name = "team_id" , referencedColumnName = "id")
-    private Team team;
+    private TeamJPA team;
 
     /**
      * Costruttore predefinito.
      */
-    public Progetto(){}
+    public ProgettoJPA(){}
 
     /**
      * Costruttore parametrico che inizializza i campi.
      * @param nomeProgetto nome del progetto
      * @param team team a cui è assegnato il progetto
      */
-    public Progetto(String nomeProgetto , Team team){
+    public ProgettoJPA(String nomeProgetto , TeamJPA team){
         this.nomeProgetto = nomeProgetto;
         this.team = team;
     }
@@ -55,7 +55,7 @@ public class Progetto {
      * Ritorna il team a cui è assegnato il progetto
      * @return team progetto
      */
-    public Team getTeam() {
+    public TeamJPA getTeam() {
         return this.team;
     }
 
@@ -71,7 +71,7 @@ public class Progetto {
      * Setta il team a cui è assegnato il progetto
      * @param team team progetto
      */
-    public void setTeam(Team team) {
+    public void setTeam(TeamJPA team) {
         this.team = team;
     }
 
