@@ -91,7 +91,7 @@ public class Sostanza {
      *
      * @param costoUnitario costo della sostanza per unità
      */
-    public void setCosto_unitario(double costoUnitario) {
+    public void setCostoUnitario(double costoUnitario) {
         this.costoUnitario = costoUnitario;
     }
 }

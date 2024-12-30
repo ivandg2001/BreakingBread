@@ -6,6 +6,7 @@ import jakarta.persistence.*;
 
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -47,12 +48,14 @@ public class Lotto {
      * Lista dei prelievi effettuati su questo lotto
      */
     @OneToMany(mappedBy = "lotto")
-    private List<Prelievo> prelievi;
+    private ArrayList<Prelievo> prelievi;
 
     /**
      * Costruttore predefinito
      */
-    public Lotto() {}
+    public Lotto() {
+
+    }
 
     /**
      * Costruttore parametrico per inizializzare i campi dell'entità
@@ -140,7 +143,7 @@ public class Lotto {
      * Ritorna la lista dei prelievi effettuati su questo lotto
      * @return Lista di oggetti prelievo
      */
-    public List<Prelievo> getPrelievi() {
+    public ArrayList<Prelievo> getPrelievi() {
         return this.prelievi;
     }
 
@@ -148,7 +151,7 @@ public class Lotto {
      * Setta la lista dei prelievi effettuati su questo lotto
      * @param prelievi Lista di prelievi
      */
-    public void setPrelievi(List<Prelievo> prelievi) {
+    public void setPrelievi(ArrayList<Prelievo> prelievi) {
         this.prelievi = prelievi;
     }
 }

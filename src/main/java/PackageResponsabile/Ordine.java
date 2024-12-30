@@ -59,11 +59,13 @@ public class Ordine {
      * @param dataOrdine data in cui è stato effettuato l'ordine.
      * @param costo      costo totale dell'ordine.
      * @param responsabile responsaile che ha effettuto l'ordine
+     * @param lotto lotto ordinato
      */
-    public Ordine(LocalDate dataOrdine, double costo , Responsabile responsabile) {
+    public Ordine(LocalDate dataOrdine, double costo , Responsabile responsabile, Lotto lotto) {
         this.dataOrdine = dataOrdine;
         this.costo = costo;
         this.responsabile = responsabile;
+        this.lotto = lotto;
     }
 
     //--Getters and Setters--

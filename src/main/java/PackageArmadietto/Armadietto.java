@@ -11,7 +11,7 @@ public class Armadietto {
     /**
      * Lista dei lotti presenti nel laboratorio
      */
-    private List<Lotto> lotti;
+    private ArrayList<Lotto> lotti;
 
     /**
      * Costruttore predefinito
@@ -24,7 +24,7 @@ public class Armadietto {
      * Costruttore parametrico che inizializza il campo
      * @param lotti lotti del laboratorio
      */
-    public Armadietto(List<Lotto> lotti){
+    public Armadietto(ArrayList<Lotto> lotti){
         this.lotti = lotti;
     }
 
@@ -40,7 +40,7 @@ public class Armadietto {
      * Setta la lista dei lotti
      * @param lotti lista lotti
      */
-    public void setLotti(List<Lotto> lotti) {
+    public void setLotti(ArrayList<Lotto> lotti) {
         this.lotti = lotti;
     }
 

@@ -2,6 +2,7 @@ package PackageRicercatore;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -35,7 +36,7 @@ public class Ricercatore {
      * Lista dei prelievi effettuati dal ricercatore
      */
     @OneToMany(mappedBy = "ricercatore")
-    private List<Prelievo> prelievi;
+    private ArrayList<Prelievo> prelievi;
 
     /**
      * Team a cui appartiene il ricercatore
@@ -57,7 +58,7 @@ public class Ricercatore {
      * @param prelievi preliev effettuati dal ricercatore
      * @param team team a cui appartiene il ricercatore
      */
-    public Ricercatore(String nome , String username , String password , List<Prelievo> prelievi , Team team){
+    public Ricercatore(String nome , String username , String password , ArrayList<Prelievo> prelievi , Team team){
         this.nome = nome;
         this.password = password;
         this.username = username;
@@ -117,7 +118,7 @@ public class Ricercatore {
      * Setta i prelievi effettuati dal ricecatore
      * @param prelievi relievi del ricercatore
      */
-    public void setPrelievi(List<Prelievo> prelievi) {
+    public void setPrelievi(ArrayList<Prelievo> prelievi) {
         this.prelievi = prelievi;
     }
 

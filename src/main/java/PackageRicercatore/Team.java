@@ -2,6 +2,7 @@ package PackageRicercatore;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 //todo: eliminare managerid dal class diagram
@@ -28,13 +29,13 @@ public class Team {
      * Lista dei ricercatori che fanno parte di questo team
      */
     @OneToMany(mappedBy = "team")
-    private List<Ricercatore> ricercatori;
+    private ArrayList<Ricercatore> ricercatori;
 
     /**
      * Lista dei progetti assegnati a questo team
      */
     @OneToMany(mappedBy = "team")
-    private List<Progetto> progetti;
+    private ArrayList<Progetto> progetti;
 
     /**
      * Costruttore predefinito
@@ -47,7 +48,7 @@ public class Team {
      * @param ricercatori lista di oggetti ricercatore
      * @param progetti lista di oggetti progetto
      */
-    public Team(String nomeTeam , List<Ricercatore> ricercatori , List<Progetto> progetti){
+    public Team(String nomeTeam , ArrayList<Ricercatore> ricercatori , ArrayList<Progetto> progetti){
         this.nomeTeam = nomeTeam;
         this.progetti = progetti;
         this.ricercatori = ricercatori;
@@ -97,7 +98,7 @@ public class Team {
      * Setta la lista dei progetti ssegnati al Team
      * @param progetti lista progetti
      */
-    public void setProgetti(List<Progetto> progetti) {
+    public void setProgetti(ArrayList<Progetto> progetti) {
         this.progetti = progetti;
     }
 
@@ -105,7 +106,7 @@ public class Team {
      * Setta la lista dei ricercatori che appartengono al Team
      * @param ricercatori lista ricercatori
      */
-    public void setRicercatori(List<Ricercatore> ricercatori) {
+    public void setRicercatori(ArrayList<Ricercatore> ricercatori) {
         this.ricercatori = ricercatori;
     }
 }

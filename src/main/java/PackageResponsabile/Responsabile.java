@@ -3,10 +3,8 @@ package PackageResponsabile;
 import jakarta.persistence.*;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
-// todo: Aggiungere le foreign keys
 
 /**
  *
@@ -41,7 +39,7 @@ public class Responsabile {
      * Lista degli ordini effettuati dal responsabile
      */
     @OneToMany(mappedBy = "responsabile")
-    private List<Ordine> ordini;
+    private ArrayList<Ordine> ordini;
 
     /**
      * Costruttore predefinito, serve a JPA
@@ -132,7 +130,7 @@ public class Responsabile {
      * Setta la lista degli ordini del responsabile
      * @param ordini lista di ordini
      */
-    public void setOrdini(List<Ordine> ordini) {
+    public void setOrdini(ArrayList<Ordine> ordini) {
         this.ordini = ordini;
     }
 
