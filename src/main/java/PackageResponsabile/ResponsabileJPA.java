@@ -112,6 +112,11 @@ public class ResponsabileJPA {
         this.username = username;
     }
 
-
-
+    /**
+     * Setta l'id del responsabile
+     * @param ID id responsabile
+     */
+    public void setID(int ID) {
+        this.ID = ID;
+    }
 }

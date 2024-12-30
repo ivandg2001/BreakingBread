@@ -5,5 +5,6 @@ import jakarta.persistence.criteria.Order;
 
 public interface ResponsabileDataInterface {
 
-    public void newOrder(Ordine ordine , Lotto lotto , int IDResponsabile);
+    public void newOrder(Ordine ordine , Lotto lotto);
+
 }

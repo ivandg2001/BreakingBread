@@ -36,6 +36,11 @@ public class OrdineJPA {
     private double costo;
 
     /**
+     * Priorita' dell'ordine
+     */
+    private int priorita;
+
+    /**
      * Responsabile che ha effettuato l'ordine
      */
     @ManyToOne
@@ -61,11 +66,17 @@ public class OrdineJPA {
      * @param responsabile responsaile che ha effettuto l'ordine
      * @param lotto lotto ordinato
      */
-    public OrdineJPA(LocalDate dataOrdine, double costo , ResponsabileJPA responsabile, LottoJPA lotto) {
+    public OrdineJPA(LocalDate dataOrdine, double costo , ResponsabileJPA responsabile, LottoJPA lotto , int priorita) {
         this.dataOrdine = dataOrdine;
         this.costo = costo;
         this.responsabile = responsabile;
         this.lotto = lotto;
+
+        if (priorita < 0 || priorita > 3 ) {
+            throw new IllegalArgumentException();
+        }else {
+            this.priorita = priorita;
+        }
     }
 
     //--Getters and Setters--
@@ -74,7 +85,7 @@ public class OrdineJPA {
      * Ritorna l'id dell'ordine
      * @return id dell'ordine
      */
-    public int getID() {
+    public Integer getID() {
         return this.ID;
     }
 
@@ -124,5 +135,41 @@ public class OrdineJPA {
      */
     public ResponsabileJPA getResponsabile() {
         return this.responsabile;
+    }
+
+    /**
+     * Setta la priorita' dell'ordine
+     * @param priorita priorita' ordine
+     */
+    public void setPriorita(int priorita) {
+        if (priorita < 0 || priorita > 3 ) {
+            throw new IllegalArgumentException();
+        }else {
+            this.priorita = priorita;
+        }
+    }
+
+    /**
+     * Ritorna la priorita' dell'ordine
+     * @return priorita ordine
+     */
+    public int getPriorita() {
+        return this.priorita;
+    }
+
+    /**
+     * Setta id dell'ordine
+     * @param ID id ordine
+     */
+    public void setID(int ID) {
+        this.ID = ID;
+    }
+
+    /**
+     * Setta il lotto
+     * @param lotto lotto ordinato
+     */
+    public void setLotto(LottoJPA lotto) {
+        this.lotto = lotto;
     }
 }

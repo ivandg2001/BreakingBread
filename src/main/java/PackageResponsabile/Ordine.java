@@ -32,7 +32,16 @@ public class Ordine {
      */
     private Responsabile responsabile;
 
+    /**
+     * Lotto inserito nell'ordine
+     */
     private Lotto lotto;
+
+    /**
+     * Priorita' dell'ordine
+     */
+    private int priorita;
+
 
     /**
      * Costruttore predefinito, serve a JPA.
@@ -127,5 +136,33 @@ public class Ordine {
      */
     public void setID(int ID) {
         this.ID = ID;
+    }
+
+    /**
+     * Setta la priorita' dell'ordine
+     * @param priorita priorita' ordine
+     */
+    public void setPriorita(int priorita) {
+        if (priorita < 0 || priorita > 3 ) {
+            throw new IllegalArgumentException();
+        }else {
+            this.priorita = priorita;
+        }
+    }
+
+    /**
+     * Ritorna la priorita' dell'ordine
+     * @return priorita ordine
+     */
+    public int getPriorita() {
+        return this.priorita;
+    }
+
+    /**
+     * Ritorna il lotto dell'ordine
+     * @return lotto ordine
+     */
+    public Lotto getLotto() {
+        return this.lotto;
     }
 }

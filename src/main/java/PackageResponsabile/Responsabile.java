@@ -115,5 +115,8 @@ public class Responsabile {
     }
 
 
+    public Integer getID() {
+        return ID;
+    }
 }
 
